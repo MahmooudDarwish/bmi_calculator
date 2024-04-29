@@ -11,7 +11,7 @@ abstract class StringConstance {
   static const String weight = "Weight:";
   static const String height = "Height:";
   static const String ageEntryItem = "age:";
-  static const String bmiStatus = "Bmi-Status";
+  static const String bmiStatus = "Bmi-Status:";
   static const String detailsButtonLabel = "Details";
 
   ///BOTTOM NAVIGATION BAR
@@ -53,4 +53,8 @@ abstract class StringConstance {
   static const heightInMeters = "Height in meters";
   static const age = "Age";
   static const calculateBmi = "Calculate BMI";
+  static const underweight = "Underweight";
+  static const normal = "Normal";
+  static const overweight = "Overweight";
+  static const obesity = "Obesity";
 }

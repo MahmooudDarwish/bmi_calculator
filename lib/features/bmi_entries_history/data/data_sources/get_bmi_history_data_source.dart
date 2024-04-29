@@ -12,14 +12,18 @@ class GetBmiHistoryDataSource implements BaseGetBmiHistoryDataSource {
   @override
   Stream<List<BmiEntryWithIdModel>> getBmiHistoryData(
       {required BmiGettingHistoryParameters bmiGettingHistoryParameters}) {
-    Stream<QuerySnapshot> stream = FirebaseService.fetchData(
-      userId: bmiGettingHistoryParameters.userId,
-    );
-    return stream.map((querySnapshot) {
-      return querySnapshot.docs.map((doc) {
-        Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-        return BmiEntryWithIdModel.fromJson(json: data, id: doc.id);
-      }).toList();
-    });
+    try {
+      Stream<QuerySnapshot> stream = FirebaseService.fetchData(
+        userId: bmiGettingHistoryParameters.userId,
+      );
+      return stream.map((querySnapshot) {
+        return querySnapshot.docs.map((doc) {
+          Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+          return BmiEntryWithIdModel.fromJson(json: data, id: doc.id);
+        }).toList();
+      });
+    } catch (e) {
+      rethrow;
+    }
   }
 }

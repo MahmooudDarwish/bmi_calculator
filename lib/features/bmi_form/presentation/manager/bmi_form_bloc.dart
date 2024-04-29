@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:bmi_calculator/core/services/service_locator.dart';
 import 'package:bmi_calculator/core/util/enums.dart';
+import 'package:bmi_calculator/core/util/util_functions.dart';
 import 'package:bmi_calculator/features/bmi_form/domain/use_cases/save_bmi_use_case.dart';
 import 'package:bmi_calculator/shared/entities/bmi_entry.dart';
 import 'package:equatable/equatable.dart';
@@ -50,7 +51,7 @@ class BmiFormBloc extends Bloc<BmiFormEvent, BmiFormState> {
                 bmi: state.bmi,
                 height: double.parse(_heightController.text),
                 age: int.parse(_ageController.text),
-                bmiStatus: "normal",
+                bmiStatus: UtilFunction.detectBmiStatus(bmi: state.bmi),
                 date: DateTime.now().toString(),
                 weight: double.parse(_weightController.text),
               ),

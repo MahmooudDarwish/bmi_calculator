@@ -61,7 +61,6 @@ class BmiHistoryBloc extends Bloc<BmiHistoryEvent, BmiHistoryState> {
   }
 
   List<BmiEntryWithId> _getDisplayedList(int page) {
-    print("hello");
     final startIndex = (page) * state.itemsPerPage;
     final endIndex = startIndex + state.itemsPerPage;
 
