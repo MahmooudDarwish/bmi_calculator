@@ -1,4 +1,5 @@
 BMI Tracker App
+
 A simple BMI tracker app that allows users to calculate and track their BMI (Body Mass Index) over time. The app uses Firebase Auth for authentication and Cloud Firestore for storing user data. Users can enter their weight, height, and age to calculate their BMI, view their history of entries, edit and delete entries, and sign out of the app.
 
 Features
